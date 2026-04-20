@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图书商城 - 首页</title>
+    <!-- 引入外部CSS样式 -->
+    <link rel="stylesheet" href="css/lab2-2501-002-index.css">
+</head>
+<body>
+    <!-- 1. 头部区域 (固定定位 + 浮动导航) -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="img/logo.png" alt="图书商城Logo">
+            </div>
+            <!-- 顶部导航 (浮动布局) -->
+            <nav class="top-nav">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">图书分类</a></li>
+                    <li><a href="#">新书上架</a></li>
+                    <li><a href="#">促销活动</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. 主体内容区 (浮动三栏布局) -->
+    <main class="main-container">
+        <!-- 左侧栏：图书分类导航 (相对定位) -->
+        <aside class="sidebar-left">
+            <h3>图书分类</h3>
+            <ul class="category-nav">
+                <li><a href="#">计算机科学</a></li>
+                <li><a href="#">文学小说</a></li>
+                <li><a href="#">经济管理</a></li>
+                <li><a href="#">教育教辅</a></li>
+                <li><a href="#">少儿读物</a></li>
+            </ul>
+        </aside>
+
+        <!-- 中间栏：图书展示区 (核心交互) -->
+        <section class="content-main">
+            <!-- 热门推荐 (浮动排列) -->
+            <div class="book-section">
+                <h2>热门推荐</h2>
+                <div class="book-grid">
+                    <!-- 鼠标悬停效果卡片 (父相子绝) -->
+                    <div class="book-card">
+                        <div class="book-img">
+                            <img src="img/book1.jpg" alt="计算机编程思想">
+                            <!-- 悬停遮罩层 -->
+                            <div class="book-hover">
+                                <p>立即购买</p>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h4>计算机编程思想</h4>
+                            <p class="price">¥89.00</p>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="img/book2.jpg" alt="人间失格">
+                        <div class="book-info">
+                            <h4>人间失格</h4>
+                            <p class="price">¥39.00</p>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="img/book3.jpg" alt="月亮与六便士">
+                        <div class="book-info">
+                            <h4>月亮与六便士</h4>
+                            <p class="price">¥45.00</p>
+                        </div>
+                    </div>
+                    <div class="book-card">
+                        <img src="img/book4.jpg" alt="算法导论">
+                        <div class="book-info">
+                            <h4>算法导论</h4>
+                            <p class="price">¥129.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 新书上市 (Table布局) -->
+            <div class="book-section">
+                <h2>新书上市</h2>
+                <table class="new-book-table">
+                    <tr>
+                        <th>图书封面</th>
+                        <th>图书名称</th>
+                        <th>作者</th>
+                        <th>定价</th>
+                    </tr>
+                    <tr>
+                        <td><img src="img/book5.jpg" alt="新书1"></td>
+                        <td>深度学习实战</td>
+                        <td>张三</td>
+                        <td>¥99.00</td>
+                    </tr>
+                    <tr>
+                        <td><img src="img/book6.jpg" alt="新书2"></td>
+                        <td>Web前端开发</td>
+                        <td>李四</td>
+                        <td>¥79.00</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- 右侧栏：促销信息 (固定定位) -->
+        <aside class="sidebar-right">
+            <div class="promo-ad">
+                <img src="img/ad.png" alt="促销广告">
+                <p>全场满100减30</p>
+            </div>
+        </aside>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <p>© 2026 图书商城 版权所有</p>
+    </footer>
+</body>
+</html>

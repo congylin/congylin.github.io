@@ -1,0 +1,267 @@
+/* 全局样式重置 & 盒模型设置 (实验要求2) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 核心：内边距/边框不撑开宽度 */
+}
+
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    background-color: #f5f5f5;
+    padding-top: 80px; /* 给固定头部留位置 */
+}
+
+/* ---- 1. 头部区域 (固定定位 + 浮动导航) ---- */
+.site-header {
+    position: fixed; /* 固定定位 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2c3e50;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* 清除浮动 */
+}
+
+.logo {
+    float: left;
+    padding: 15px 0;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* 顶部导航 - 浮动布局 (实验要求3) */
+.top-nav {
+    float: right;
+}
+
+.top-nav ul {
+    list-style: none;
+}
+
+.top-nav ul li {
+    float: left;
+    margin-left: 30px;
+    line-height: 80px;
+}
+
+.top-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.top-nav ul li a:hover {
+    background-color: #3498db;
+    border-radius: 3px;
+    cursor: pointer; /* 鼠标悬停指针 (实验要求5) */
+}
+
+/* ---- 2. 主体容器 (三栏浮动布局) ---- */
+.main-container {
+    width: 1200px;
+    margin: 20px auto;
+    overflow: hidden; /* 清除内部浮动 */
+}
+
+/* 左侧栏 - 相对定位 (实验要求4) */
+.sidebar-left {
+    position: relative; /* 相对定位 */
+    float: left;
+    width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sidebar-left h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+}
+
+.category-nav {
+    list-style: none;
+}
+
+.category-nav li {
+    margin-bottom: 10px;
+}
+
+.category-nav li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 3px;
+}
+
+.category-nav li a:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* 中间内容区 */
+.content-main {
+    float: left;
+    width: 760px;
+    margin: 0 20px;
+}
+
+.book-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.book-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-left: 4px solid #3498db;
+    padding-left: 10px;
+}
+
+/* 图书卡片 - 浮动排列 */
+.book-grid {
+    overflow: hidden;
+}
+
+.book-card {
+    float: left;
+    width: 23%;
+    margin: 0 1%;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.book-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.book-img {
+    position: relative; /* 父相子绝 - 悬停层基准 */
+    overflow: hidden;
+}
+
+.book-img img,
+.book-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+/* 鼠标悬停显示遮罩 (实验要求5 - 显示隐藏) */
+.book-hover {
+    position: absolute; /* 绝对定位 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* 默认隐藏 */
+    transition: opacity 0.3s ease;
+}
+
+.book-card:hover .book-hover {
+    opacity: 1; /* 悬停显示 */
+    cursor: pointer;
+}
+
+.book-info {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.book-info h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.price {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* 新书上市 - Table布局 (实验要求3) */
+.new-book-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.new-book-table th, .new-book-table td {
+    border: 1px solid #eee;
+    padding: 10px;
+}
+
+.new-book-table th {
+    background-color: #f8f8f8;
+    color: #2c3e50;
+}
+
+.new-book-table td img {
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* 右侧栏 - 固定定位 (实验要求4) */
+.sidebar-right {
+    position: fixed; /* 固定定位 - 随屏幕滚动 */
+    top: 100px;
+    right: 20px;
+    width: 200px;
+}
+
+.promo-ad {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.promo-ad img {
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.promo-ad p {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* 页脚 */
+.site-footer {
+    clear: both; /* 清除所有浮动 */
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: #fff;
+    margin-top: 30px;
+}
